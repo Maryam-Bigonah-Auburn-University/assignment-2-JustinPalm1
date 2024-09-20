@@ -19,9 +19,9 @@ int main() {
 		}
 
 		cout << "Change can be given as:" << endl;
-		computeCoin(25,number,amountLeft);
+		computeCoin(25,number,amountLeft); 
 		printOutput(25,number);
-		computeCoin(10,number,amountLeft);
+		computeCoin(10,number,amountLeft);  
 		printOutput(10,number);
 		computeCoin(1,number,amountLeft);
 		printOutput(1,number);
@@ -36,13 +36,18 @@ int main() {
 	return 0;
 }
 
+// Function to compute the number of coins of a specific denomination
 void computeCoin(int coinValue, int& number, int& amountLeft) {
-	
+	number = amountLeft / coinValue; // Calculate the maximum number of coins
+    	amountLeft -= number * coinValue; // Decrease the remaining amount
 }
 
+// Function to print the output for the number of coins
 void printOutput(int coinValue, int number) {
 	cout << number;
 	switch(coinValue) {
-		
+	    case 25: cout << "quarter(s)"; break; // Quarters
+            case 10: cout << "dime(s)"; break;    // Dimes
+            case 1:  cout << "penny(ies)"; break;  // Pennies
 	}
 }
